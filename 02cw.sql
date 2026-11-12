@@ -1,3 +1,5 @@
+use infs_skorzynskik;
+
 -- zad 1 
 
 create table pracownik (
@@ -63,7 +65,7 @@ foreign key (projekt)
 references projekt(id_projektu)
 on delete cascade;
 
-update 
+update zadanie set projekt = 1 where id_zadania between 1 and 2;
 
 select * from projekt;
 
@@ -113,9 +115,11 @@ insert into zadanie_has_status (id_zadania, id_statusu) values
 (2, 2),
 (3, 3);
 
-delete from projekt where id_projektu = 2;
+delete from projekt where id_projektu = 1;
 
 drop table sprint;
+
+select * from zadanie_has_status;
 
 
 
